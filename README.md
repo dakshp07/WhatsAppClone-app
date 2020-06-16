@@ -1,6 +1,7 @@
 # WhatsAppClone
 
 A new Flutter application.
+![GitHub Stars](https://github.com/dakshp07/WhatsAppClone-app/stargazers)
 
 ## Images
 
