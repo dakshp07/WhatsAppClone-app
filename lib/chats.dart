@@ -24,8 +24,15 @@ class _ChatsState extends State<Chats> {
               height: 10,
             ),
             new ListTile(
-              leading: new CircleAvatar(
-                backgroundImage: new AssetImage(data[i].avatar),
+              leading: GestureDetector(
+                child: new CircleAvatar(
+                  backgroundImage: new AssetImage(data[i].avatar),
+                ),
+                onTap: (){
+                  showDialog(context: context, builder: (context){
+                    return AlertDialog(title: Text(data[i].name), content: Image.asset(data[i].avatar, height: 200, width: 120, fit: BoxFit.cover,), contentPadding: EdgeInsets.all(16),);
+                  });
+                },
               ),
               title: new Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -25,16 +25,21 @@ class _MyAppState extends State<MyApp> {
               title: new Text("WhatsApp",style: TextStyle(fontSize: 20,color: Colors.white),),
               bottom: TabBar(
                   tabs: [
-                    Tab(icon: Icon(Icons.camera_alt),),
+                    Tab(icon: Icon(Icons.camera_alt)),
                     Tab(text: "CHATS",),
                     Tab(text: "STATUS",),
                     Tab(text: "CALLS",),
                   ],
               ),
               actions: <Widget>[
-                Icon(Icons.search),
-                Padding(padding: const EdgeInsets.symmetric(horizontal: 5)),
-                Icon(Icons.more_vert),
+                IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+                SizedBox(width: 8,),
+                PopupMenuButton(itemBuilder: (context) {
+                  return [
+                    PopupMenuItem<String>(child: Text("New group"), key: Key("new-group"),),
+                    PopupMenuItem<String>(child: Text("Configurations"), key: Key( "config"),),
+                  ];
+                },)
               ],
             ),
             body: TabBarView(
