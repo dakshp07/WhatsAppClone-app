@@ -34,7 +34,12 @@ class _MyAppState extends State<MyApp> {
               actions: <Widget>[
                 IconButton(onPressed: (){}, icon: Icon(Icons.search)),
                 SizedBox(width: 8,),
-                IconButton(onPressed: (){}, icon: Icon(Icons.more_vert)),
+                PopupMenuButton(itemBuilder: (context) {
+                  return [
+                    PopupMenuItem<String>(child: Text("New group"), key: Key("new-group"),),
+                    PopupMenuItem<String>(child: Text("Configurations"), key: Key( "config"),),
+                  ];
+                },)
               ],
             ),
             body: TabBarView(
